@@ -15,10 +15,11 @@ const MemoryGame = () => {
   const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
-    if (matchedCards.length === cards.length) {
+    console.log(matchedCards.length,cards.length)
+    if (matchedCards.length === cards.length / 2) {
       setGameOver(true);
     }
-  }, [matchedCards, cards.length]);
+  }, [matchedCards.length, cards]);
 
   const flipCard = (index) => {
     if (flippedCards.length === 2 || flippedCards.includes(index) || gameOver) {
